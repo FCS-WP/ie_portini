@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'NeutraTextTF';
+  src: url("../fonts/neutra/NeutraTextTF-Book.eot");
+  src: url("../fonts/neutra/NeutraTextTF-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/neutra/NeutraTextTF-Book.woff2") format("woff2"), url("../fonts/neutra/NeutraTextTF-Book.woff") format("woff"), url("../fonts/neutra/NeutraTextTF-Book.ttf") format("truetype"), url("../fonts/neutra/NeutraTextTF-Book.svg#NeutraTextTF-Book") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NeutraTextTF';
+  src: url("../fonts/neutra/NeutraTextTF-Demi.eot");
+  src: url("../fonts/neutra/NeutraTextTF-Demi.eot?#iefix") format("embedded-opentype"), url("../fonts/neutra/NeutraTextTF-Demi.woff2") format("woff2"), url("../fonts/neutra/NeutraTextTF-Demi.woff") format("woff"), url("../fonts/neutra/NeutraTextTF-Demi.ttf") format("truetype"), url("../fonts/neutra/NeutraTextTF-Demi.svg#NeutraTextTF-Demi") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NeutraTextTF';
+  src: url("NeutraTextTF-Bold.eot");
+  src: url("../fonts/neutra/NeutraTextTF-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/neutra/NeutraTextTF-Bold.woff2") format("woff2"), url("../fonts/neutra/NeutraTextTF-Bold.woff") format("woff"), url("../fonts/neutra/NeutraTextTF-Bold.ttf") format("truetype"), url("../fonts/neutra/NeutraTextTF-Bold.svg#NeutraTextTF-Bold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+.btn-theme-overlay .rev-btn {
+  position: relative;
+  z-index: 1;
+  border: 0;
+}
+.btn-theme-overlay .rev-btn:before {
+  content: '';
+  background: #538c9b;
+  height: 100%;
+  width: 0;
+  position: absolute;
+  -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -o-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  top: 0;
+  z-index: -1;
+  right: 0;
+}
+.rtl .btn-theme-overlay .rev-btn:before {
+  left: 0;
+  right: auto;
+}
+.btn-theme-overlay .rev-btn:hover:before, .btn-theme-overlay .rev-btn:focus:before {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+.rtl .btn-theme-overlay .rev-btn:hover:before, .rtl .btn-theme-overlay .rev-btn:focus:before {
+  left: auto;
+  right: auto;
+}
+.rtl .btn-theme-overlay .rev-btn:hover:before, .rtl .btn-theme-overlay .rev-btn:focus:before {
+  right: 0;
+  left: auto;
+}

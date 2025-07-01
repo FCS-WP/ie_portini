@@ -1,0 +1,62 @@
+<?php
+/**
+ * Related Products
+ *
+ * @author 		WooThemes
+ * @package 	WooCommerce/Templates
+ * @version     9.6.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+$show_product_releated = oworganic_get_config('show_product_releated', true);
+if ( !$show_product_releated  ) {
+    return;
+}
+
+$columns = oworganic_get_config('releated_product_columns', 4);
+
+if ( $related_products ) :
+	$item_style = oworganic_get_config('product_item_style', 'v1');
+	if ( $item_style == 'v1' ) {
+		$item_style = '';
+	}
+?>
+
+	<div class="related products widget">
+		<div class="woocommerce">
+			<h3 class="widget-title text-center">
+				<?php esc_html_e( 'Related Products', 'oworganic' ); ?>
+			</h3>
+			<div class="slick-carousel products" data-carousel="slick"
+			    data-items="<?php echo esc_attr($columns); ?>"
+			    data-smallmedium="3"
+			    data-extrasmall="2"
+			    data-slidestoscroll="<?php echo esc_attr($columns); ?>"
+			    data-slidestoscroll_smallmedium="3"
+			    data-slidestoscroll_extrasmall="2"
+
+			    data-pagination="false" data-nav="true">
+
+					<?php wc_set_loop_prop( 'loop', 0 ); ?>
+
+					<?php foreach ( $related_products as $related_product ) : ?>
+							<div class="item">
+								<?php
+								$post_object = get_post( $related_product->get_id() );
+
+								setup_postdata( $GLOBALS['post'] =& $post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
+
+								wc_get_template_part( 'item-product/inner', $item_style );
+								?>
+							</div>
+					<?php endforeach; ?>
+			</div>
+		</div>
+	</div>
+	<?php
+endif;
+
+wp_reset_postdata();
