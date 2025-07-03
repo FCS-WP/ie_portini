@@ -9,8 +9,8 @@ function products_add_on()
         echo '<div class="product-add-ons-list">';
 
         while (have_rows('product_add_ons_list', $product_id)) : the_row();
-            $get_sub_field = get_sub_field('add_on_items');
-            $add_on_products = wc_get_product($get_sub_field->ID);
+            $get_sub_product = get_sub_field('add_on_items');
+            $add_on_products = wc_get_product($get_sub_product->ID);
 
             echo '<div class="add-on-product">';
             woocommerce_quantity_input(
