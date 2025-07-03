@@ -2,6 +2,7 @@
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 20px;
+  width: 90%;
   .spacing-line {
     margin: 10px 0;
     border-bottom: 2px solid #605144;
@@ -10,12 +11,17 @@
   .add-on-product {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 0px 10px;
     p {
       margin: 0;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 500;
       color: #605144;
+    }
+    .quantity {
+      width: 90px;
+      height: 35px;
+      margin: 0 !important;
     }
   }
 }
